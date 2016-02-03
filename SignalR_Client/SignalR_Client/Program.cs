@@ -9,16 +9,15 @@ namespace SignalR_Client
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Starting client  http://localhost:8089");
-            
+            Console.WriteLine("Starting client  http://localhost:8089");            
             var hubConnection = new HubConnection("http://localhost:8089/");
             //hubConnection.TraceLevel = TraceLevels.All;
             //hubConnection.TraceWriter = Console.Out;
             IHubProxy myHubProxy = hubConnection.CreateHubProxy("MyHub");
+            
 
-            myHubProxy.On<string, string>("addMessage", (name, message) => Console.Write("Recieved addMessage: " + name + ": " + message + "\n"));
-            myHubProxy.On("heartbeat", () => Console.Write("Recieved heartbeat \n"));
- 
+            myHubProxy.On<string, string>("BroadCast_Message", (name, message) => DoSomethingWithTheMessage(name, message));
+            myHubProxy.On("heartbeat", () => DoSomethingonHeartbeat()); 
             hubConnection.Start().Wait();
 
             while (true)
@@ -26,18 +25,20 @@ namespace SignalR_Client
                 string key = Console.ReadLine();
                 if (key.ToUpper() == "W")
                 {
-                    myHubProxy.Invoke("addMessage", "client message", " sent from console client").ContinueWith(task =>
+                    Console.WriteLine("I am now sending a message to the server, which will be then redistributed to all clients ...... ");
+                    myHubProxy.Invoke("BroadCast_Message", Environment.UserName, " sent from console client at " + DateTime.Now.ToLongTimeString()).ContinueWith(task =>
                     {
                         if (task.IsFaulted)
                         {
                             Console.WriteLine("!!! There was an error opening the connection:{0} \n", task.Exception.GetBaseException());
                         }
 
-                    }).Wait();
-                    Console.WriteLine("Client Sending addMessage to server\n");
+                    }).Wait();                    
                 }
-                if (key.ToUpper() == "E")
+
+                if (key.ToUpper() == "H")
                 {
+                    Console.WriteLine("I am now sending a heartbeat to the server ...... ");
                     myHubProxy.Invoke("Heartbeat").ContinueWith(task =>
                     {
                         if (task.IsFaulted)
@@ -46,8 +47,9 @@ namespace SignalR_Client
                         }
 
                     }).Wait();
-                    Console.WriteLine("client heartbeat sent to server\n");
+                   
                 }
+
                 if (key.ToUpper() == "C")
                 {
                     break;
@@ -55,5 +57,27 @@ namespace SignalR_Client
             }
 
         }
+
+
+
+        private static void DoSomethingWithTheMessage(string name, string message)
+        {
+            Console.ForegroundColor = ConsoleColor.Red;
+            Console.WriteLine("Message from >>> {0}  with content >>> {1}   ", name, message);
+            Console.ResetColor();
+        }
+
+        private static void DoSomethingonHeartbeat()
+        {
+            Console.ForegroundColor = ConsoleColor.Yellow;
+            Console.Write("Recieved heartbeat \n");
+            Console.ResetColor();
+        }
+
+
+
+
+
+
     }
 }

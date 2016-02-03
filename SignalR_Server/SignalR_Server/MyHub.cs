@@ -9,7 +9,7 @@ namespace SignalR_Server
         public void BroadCast_Message(string name, string message)
         {
             Console.WriteLine("Message from >>> {0} with content >>> {1}", name, message);
-            Clients.All.addMessage(name, message);
+            Clients.All.BroadCast_Message(name, message);
         }
 
         public void Heartbeat()
