@@ -2,9 +2,8 @@
 using System.Threading;
 using Microsoft.AspNet.SignalR;
 using Microsoft.AspNet.SignalR.Client;
-using SignalRClientConsole.Dto;
 
-namespace SignalRClientConsole
+namespace SignalR_Client
 {
     class Program
     {
@@ -19,8 +18,7 @@ namespace SignalRClientConsole
 
             myHubProxy.On<string, string>("addMessage", (name, message) => Console.Write("Recieved addMessage: " + name + ": " + message + "\n"));
             myHubProxy.On("heartbeat", () => Console.Write("Recieved heartbeat \n"));
-            myHubProxy.On<HelloModel>("sendHelloObject", hello => Console.Write("Recieved sendHelloObject {0}, {1} \n", hello.Molly, hello.Age));
-
+ 
             hubConnection.Start().Wait();
 
             while (true)
@@ -49,19 +47,6 @@ namespace SignalRClientConsole
 
                     }).Wait();
                     Console.WriteLine("client heartbeat sent to server\n");
-                }
-                if (key.ToUpper() == "R")
-                {
-                    HelloModel hello = new HelloModel { Age = 10, Molly = "clientMessage" };
-                    myHubProxy.Invoke<HelloModel>("SendHelloObject", hello).ContinueWith(task =>
-                    {
-                        if (task.IsFaulted)
-                        {
-                            Console.WriteLine("There was an error opening the connection:{0}", task.Exception.GetBaseException());
-                        }
-
-                    }).Wait();
-                    Console.WriteLine("client sendHelloObject sent to server\n");
                 }
                 if (key.ToUpper() == "C")
                 {
