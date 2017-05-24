@@ -1,11 +1,5 @@
 SignalRMessaging
 
-forked from damienbod/SignalRMessaging
+forked from screig/signalRMessaging who forked from damienbod/SignalRMessaging
 
-
-I want to make the SignalR server a service using ISS. 
-
-
-
-
-
+Single application, client-server messaging system for .NET 4.6
