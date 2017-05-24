@@ -25,8 +25,8 @@ public class ClientProgram {
   }
 
   private async Task Startup() {
-    Console.WriteLine( "ClientProgram on http://localhost:8080" );
-    m_hubConnection = new HubConnection( "http://localhost:8080" );
+    Console.WriteLine( "ClientProgram on http://localhost:8089" );
+    m_hubConnection = new HubConnection( "http://localhost:8089" );
     m_myHubProxy = m_hubConnection.CreateHubProxy( nameof( ServerHub ) );
     m_myHubProxy.On<string, string>( nameof( ServerHub.BroadCastMessage ), ( name, message ) => OnMessageReceived( name, message ) );
     m_hubConnection.Closed += OnClosed;
