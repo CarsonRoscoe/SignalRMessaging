@@ -22,3 +22,27 @@ C:\Users\Carson\Downloads\SignalRMessaging-master (1)\SignalRMessaging-master\Si
 C:\Users\Carson\Downloads\SignalRMessaging-master (1)\SignalRMessaging-master\SignalR_Client\SignalR_Client\bin\Debug\Microsoft.Owin.Cors.xml
 C:\Users\Carson\Downloads\SignalRMessaging-master (1)\SignalRMessaging-master\SignalR_Client\SignalR_Client\bin\Debug\Microsoft.Owin.Host.HttpListener.xml
 C:\Users\Carson\Downloads\SignalRMessaging-master (1)\SignalRMessaging-master\SignalR_Client\SignalR_Client\bin\Debug\Microsoft.Owin.Hosting.xml
+C:\Users\Carson\Documents\SignalRMessaging\SignalR_Client\bin\Debug\SignalR_Client.exe.config
+C:\Users\Carson\Documents\SignalRMessaging\SignalR_Client\bin\Debug\SignalR_Client.exe
+C:\Users\Carson\Documents\SignalRMessaging\SignalR_Client\bin\Debug\SignalR_Client.pdb
+C:\Users\Carson\Documents\SignalRMessaging\SignalR_Client\bin\Debug\Microsoft.AspNet.SignalR.Client.dll
+C:\Users\Carson\Documents\SignalRMessaging\SignalR_Client\bin\Debug\Microsoft.AspNet.SignalR.Core.dll
+C:\Users\Carson\Documents\SignalRMessaging\SignalR_Client\bin\Debug\Microsoft.Owin.Cors.dll
+C:\Users\Carson\Documents\SignalRMessaging\SignalR_Client\bin\Debug\Microsoft.Owin.dll
+C:\Users\Carson\Documents\SignalRMessaging\SignalR_Client\bin\Debug\Microsoft.Owin.Host.HttpListener.dll
+C:\Users\Carson\Documents\SignalRMessaging\SignalR_Client\bin\Debug\Microsoft.Owin.Hosting.dll
+C:\Users\Carson\Documents\SignalRMessaging\SignalR_Client\bin\Debug\Microsoft.Owin.Security.dll
+C:\Users\Carson\Documents\SignalRMessaging\SignalR_Client\bin\Debug\Newtonsoft.Json.dll
+C:\Users\Carson\Documents\SignalRMessaging\SignalR_Client\bin\Debug\Owin.dll
+C:\Users\Carson\Documents\SignalRMessaging\SignalR_Client\bin\Debug\System.Web.Cors.dll
+C:\Users\Carson\Documents\SignalRMessaging\SignalR_Client\bin\Debug\Microsoft.AspNet.SignalR.Client.xml
+C:\Users\Carson\Documents\SignalRMessaging\SignalR_Client\bin\Debug\Microsoft.AspNet.SignalR.Core.xml
+C:\Users\Carson\Documents\SignalRMessaging\SignalR_Client\bin\Debug\Microsoft.Owin.xml
+C:\Users\Carson\Documents\SignalRMessaging\SignalR_Client\bin\Debug\Microsoft.Owin.Cors.xml
+C:\Users\Carson\Documents\SignalRMessaging\SignalR_Client\bin\Debug\Microsoft.Owin.Host.HttpListener.xml
+C:\Users\Carson\Documents\SignalRMessaging\SignalR_Client\bin\Debug\Microsoft.Owin.Hosting.xml
+C:\Users\Carson\Documents\SignalRMessaging\SignalR_Client\bin\Debug\Microsoft.Owin.Security.xml
+C:\Users\Carson\Documents\SignalRMessaging\SignalR_Client\bin\Debug\Newtonsoft.Json.xml
+C:\Users\Carson\Documents\SignalRMessaging\SignalR_Client\obj\Debug\SignalR_Client.csprojResolveAssemblyReference.cache
+C:\Users\Carson\Documents\SignalRMessaging\SignalR_Client\obj\Debug\SignalR_Client.exe
+C:\Users\Carson\Documents\SignalRMessaging\SignalR_Client\obj\Debug\SignalR_Client.pdb

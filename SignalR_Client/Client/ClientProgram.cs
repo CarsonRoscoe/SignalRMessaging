@@ -26,13 +26,18 @@ public class ClientProgram {
 
   private async Task Startup() {
     Console.WriteLine( "ClientProgram on http://localhost:8080" );
-    m_hubConnection = new HubConnection( "http://localhost:8080/" );
+    m_hubConnection = new HubConnection( "http://localhost:8080" );
     m_myHubProxy = m_hubConnection.CreateHubProxy( nameof( ServerHub ) );
     m_myHubProxy.On<string, string>( nameof( ServerHub.BroadCastMessage ), ( name, message ) => OnMessageReceived( name, message ) );
     m_hubConnection.Closed += OnClosed;
     m_hubConnection.Error += OnErrorReceived;
+    m_hubConnection.StateChanged += M_hubConnection_StateChanged;
     await m_hubConnection.Start(new WebSocketTransport()); //Hangs
     await SendMessage( "Startup", "Sending from same thread as connection established" ); //Never hit
+  }
+
+  private void M_hubConnection_StateChanged( StateChange obj ) {
+    Console.WriteLine( "State Changed to " + obj.NewState.ToString() );
   }
 
   private void OnErrorReceived( Exception obj ) {

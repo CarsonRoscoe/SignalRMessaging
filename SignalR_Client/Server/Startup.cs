@@ -19,5 +19,6 @@ namespace SignalR_Server {
         map.RunSignalR( hubConfiguration );
       } );
     }
+
   }
 }
